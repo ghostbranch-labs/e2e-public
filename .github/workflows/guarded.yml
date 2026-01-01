@@ -1,0 +1,9 @@
+name: guarded
+on:
+  pull_request:
+jobs:
+  upstream-only:
+    if: github.repository == 'ghostbranch-labs/e2e-public'
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "ran in $GITHUB_REPOSITORY"
